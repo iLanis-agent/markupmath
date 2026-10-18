@@ -1,0 +1,201 @@
+[
+ {
+  "fn": "priceTruth",
+  "args": [
+   12,
+   40
+  ],
+  "expected": "Cost $12.00 at a 40% margin: sell at $20.00, profit $8.00 (that is a 66.7% markup)."
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   12,
+   0
+  ],
+  "expected": "Cost $12.00 at a 0% margin: sell at $12.00, profit $0.00 (that is a 0.0% markup)."
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   9.99,
+   25
+  ],
+  "expected": "Cost $9.99 at a 25% margin: sell at $13.32, profit $3.33 (that is a 33.3% markup)."
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   0.5,
+   99.5
+  ],
+  "expected": "Cost $0.50 at a 99.5% margin: sell at $100.00, profit $99.50 (that is a 19900.0% markup)."
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   12,
+   100
+  ],
+  "expected": "ERR:margin must be 0 or more and under 100 percent"
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   0,
+   40
+  ],
+  "expected": "ERR:cost must be more than $0"
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   -1,
+   40
+  ],
+  "expected": "ERR:cost must be between $0 and $10,000,000"
+ },
+ {
+  "fn": "priceTruth",
+  "args": [
+   12,
+   -5
+  ],
+  "expected": "ERR:margin must be 0 or more and under 100 percent"
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "markup",
+   50
+  ],
+  "expected": "A 50% markup is a 33.3% margin."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "markup",
+   100
+  ],
+  "expected": "A 100% markup is a 50.0% margin."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "markup",
+   0
+  ],
+  "expected": "A 0% markup is a 0.0% margin."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "margin",
+   40
+  ],
+  "expected": "A 40% margin is a 66.7% markup."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "margin",
+   50
+  ],
+  "expected": "A 50% margin is a 100.0% markup."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "margin",
+   99
+  ],
+  "expected": "A 99% margin is a 9900.0% markup."
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "margin",
+   100
+  ],
+  "expected": "ERR:margin must be under 100 percent"
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "markup",
+   -5
+  ],
+  "expected": "ERR:percent must be 0 or more"
+ },
+ {
+  "fn": "swapTruth",
+  "args": [
+   "cost",
+   5
+  ],
+  "expected": "ERR:kind must be markup or margin"
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   300,
+   20,
+   12
+  ],
+  "expected": "Fixed costs $300.00, price $20.00, unit cost $12.00: $8.00 per sale, 38 sales to cover fixed costs (38 x $8.00 = $304.00)."
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   8,
+   20,
+   12
+  ],
+  "expected": "Fixed costs $8.00, price $20.00, unit cost $12.00: $8.00 per sale, 1 sale to cover fixed costs (1 x $8.00 = $8.00)."
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   0.01,
+   20,
+   12
+  ],
+  "expected": "Fixed costs $0.01, price $20.00, unit cost $12.00: $8.00 per sale, 1 sale to cover fixed costs (1 x $8.00 = $8.00)."
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   300,
+   12,
+   12
+  ],
+  "expected": "ERR:price must be above the unit cost"
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   0,
+   20,
+   12
+  ],
+  "expected": "ERR:fixed costs must be more than $0"
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   300,
+   20,
+   -1
+  ],
+  "expected": "ERR:unit cost must be between $0 and $10,000,000"
+ },
+ {
+  "fn": "breakevenTruth",
+  "args": [
+   100,
+   3.5,
+   1.25
+  ],
+  "expected": "Fixed costs $100.00, price $3.50, unit cost $1.25: $2.25 per sale, 45 sales to cover fixed costs (45 x $2.25 = $101.25)."
+ }
+]
